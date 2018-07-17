@@ -1,0 +1,20 @@
+rm(list=ls())
+
+library(rms)
+setwd("/Users/clingley/Desktop/rFiles/1718/AP/language")
+dat <- read.csv("lang_nhsummit.csv")
+attach(dat)
+
+
+#set appropriate data vectors here for test below
+Y <- EngLan
+
+X <- cbind(english,reading)
+xvar <- c("english","reading")
+
+
+ddist<-datadist(xvar)
+options(datadist='ddist')
+
+ologit<-lrm(Y ~ X, data=dat)
+print(ologit)
