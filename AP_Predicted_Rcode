@@ -4,7 +4,7 @@ setwd("/Users/clingley/Desktop/rFiles/1718/AP")
 dat <- read.csv("bio_peak.csv")
 #attach(dat)
 
-
+------intinial the column???
 dat["linear"] <- NA
 dat["x1"] <- NA
 dat["x2"] <- NA
@@ -25,7 +25,8 @@ dat["passingProb"] <- NA
 #dat["exceeds"] <- NA
 #dat["exemplar"] <- NA
 
-
+-----how to get value of diffence subjet??? weight of subjects???
+-----how to get int1,int2,int3,int4 value???
 read = -.0
 eng = -.0
 mth = -.1819
@@ -38,6 +39,9 @@ int2 = 7.3877
 int3 = 10.0842
 int4 = 13.003
 
+-----linear regression model with different subjects to predict different subjects score, 
+EPA subjects included language, reading, english, math, science, 
+MAPmath, MAPread???????
 
 for(c in 1:length(dat$StudentID)){
   #dat$linear[c] = (other*dat$language[c])
@@ -48,6 +52,7 @@ for(c in 1:length(dat$StudentID)){
   dat$linear[c] = (mth*dat$math[c] + sci*dat$science[c])
     #dat$linear[c] = (mth*dat$MAPmath[c] + read*dat$MAPread[c])
   #dat$linear[c] = (read*dat$MAPread[c])
+  
   dat$x1[c] = (1/(1 + exp(-int1 - dat$linear[c])))
   dat$x2[c] = (1/(1 + exp(-int2 - dat$linear[c])))
   dat$x3[c] = (1/(1 + exp(-int3 - dat$linear[c])))
