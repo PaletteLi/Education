@@ -4,7 +4,7 @@ setwd("/Users/clingley/Desktop/rFiles/1718/AP")
 dat <- read.csv("bio_peak.csv")
 #attach(dat)
 
-------intinial the column???
+#intinial the column???
 dat["linear"] <- NA
 dat["x1"] <- NA
 dat["x2"] <- NA
@@ -25,8 +25,8 @@ dat["passingProb"] <- NA
 #dat["exceeds"] <- NA
 #dat["exemplar"] <- NA
 
------how to get value of diffence subjet??? weight of subjects???
------how to get int1,int2,int3,int4 value???
+	#how to get value of diffence subjet??? weight of subjects???
+	#how to get int1,int2,int3,int4 value???
 read = -.0
 eng = -.0
 mth = -.1819
@@ -39,9 +39,9 @@ int2 = 7.3877
 int3 = 10.0842
 int4 = 13.003
 
------linear regression model with different subjects to predict different subjects score, 
-EPA subjects included language, reading, english, math, science, 
-MAPmath, MAPread???????
+		#linear regression model with different subjects to predict different subjects score, 
+		#EPA subjects included language, reading, english, math, science, 
+		#MAPmath, MAPread???????
 
 for(c in 1:length(dat$StudentID)){
   #dat$linear[c] = (other*dat$language[c])
@@ -97,16 +97,6 @@ write.csv(dat, file="bio_peak.csv")
 
 
 
-
-
-
-
-
-
-
-
-
-
 for(c in 1:length(Student_Local_ID)){
   dat$linear[c] = (other*Language[c])
   dat$x1[c] = (1/(1 + exp(-int1 - dat$linear[c])))
@@ -140,3 +130,4 @@ else if (max(dat$p1[c],dat$p2[c],dat$p3[c],dat$p4[c],dat$p5[c]) == dat$p3[c])
 else if (max(dat$p1[c],dat$p2[c],dat$p3[c],dat$p4[c],dat$p5[c]) == dat$p5[c]) 
  dat$predict[c] <- 5
 }
+
